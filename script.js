@@ -118,13 +118,3 @@ window.addEventListener('scroll', () => {
   links.forEach((link) => link.classList.remove('active'));
   links[index].classList.add('active');
 });
-
-
-if (document.body.clientWidth <= 1000) {
-    tl.to('.line', {
-        width: '100%',
-        duration: 1,
-    })
-    console.log('<1000')
-
-}

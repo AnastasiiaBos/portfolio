@@ -444,12 +444,19 @@ input, textarea {
 }
 
 @media (max-width: 450px) {
+    h1 {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
 
-    /* .myImage, 
-    .borders-parent {
-        width: 300px;
-        height: 233px;
-    } */
+    .about-me {
+        margin-bottom: 50px;
+    }
+
+    .current,
+    .active {
+        font-size: 1.2em;
+    }
 
     .projects-description-list,
     .projects-description,
@@ -463,6 +470,8 @@ input, textarea {
         width: 350px;
         height: 234px;
     }
+
+    /* .borders-parent {} */
 
     form {
         width: 350px;
