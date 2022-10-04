@@ -1,9 +1,16 @@
 let tl = gsap.timeline();
 
-tl.to('.line', {
-    height: '100%',
-    duration: 1,
-})
+if (document.body.clientWidth > 1000) {
+    tl.from('.line', {
+        height: '0%',
+        duration: 1,
+    })
+} else {
+    tl.from('.line', {
+        width: '0%',
+        duration: 1,
+    })
+}
 
 tl.from('.menu', {
     opacity: 0,
@@ -106,8 +113,18 @@ const sections = document.querySelectorAll('section');
 window.addEventListener('scroll', () => {
   let index = sections.length;
 
-  while(--index && window.scrollY + 90 < sections[index].offsetTop) {}
+  while(--index && window.scrollY + 80 < sections[index].offsetTop) {}
   
   links.forEach((link) => link.classList.remove('active'));
   links[index].classList.add('active');
 });
+
+
+if (document.body.clientWidth <= 1000) {
+    tl.to('.line', {
+        width: '100%',
+        duration: 1,
+    })
+    console.log('<1000')
+
+}
