@@ -12,7 +12,6 @@ body {
     height: 100vh;
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
     color: #dedede;
     margin: 0;
     padding: 0;
@@ -105,6 +104,7 @@ section {
 
 h1 {
     height: 92px;
+    margin-bottom: 30px;
 }
 
 .myImage {
@@ -479,10 +479,14 @@ input, textarea {
     }
 
     .projects-description-list,
-    .projects-description,
+    .project-description,
     .description,
     .details {
         width: 350px;
+    }
+
+    .projects-name-list {
+        margin-bottom: 30px;
     }
 
     .description,
@@ -492,6 +496,15 @@ input, textarea {
 
     form {
         width: 350px;
+    }
+
+    #message-button {
+        font-size: 1em;
+    }
+
+    #message-button::after {
+        width: 206.4px;
+        height: 46.2px;
     }
 
     .footer {
