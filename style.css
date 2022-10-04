@@ -2,6 +2,8 @@ body {
     background-color: #1d1d20;
     width: 100%;
     height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
     /* overflow: hidden; */
     color: #dedede;
     margin: 0;
@@ -444,6 +446,10 @@ input, textarea {
 }
 
 @media (max-width: 450px) {
+.wrapper {
+        width: 90%;
+    }
+
     h1 {
         font-size: 1.2em;
         margin-bottom: 20px;
@@ -451,6 +457,12 @@ input, textarea {
 
     .about-me {
         margin-bottom: 50px;
+    }
+
+    .border-wrap,
+    .project-description img {
+        width: 350px;
+        height: 234px;
     }
 
     .current,
@@ -465,15 +477,16 @@ input, textarea {
         width: 350px;
     }
 
-    .border-wrap,
-    .project-description img {
-        width: 350px;
-        height: 234px;
+    .description,
+    .details {
+        font-size: 0.9em;
     }
-
-    /* .borders-parent {} */
 
     form {
         width: 350px;
+    }
+
+    .footer {
+        font-size: 0.7em;
     }
 }
