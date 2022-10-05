@@ -60,8 +60,19 @@ tl.from('.nav-toggle', {
 
 let tl2 = gsap.timeline();
 
-tl2.to( '.border-blue', { duration: .5, x: 15, y: -20, opacity: 1 } )
-.to( '.border-yel', { duration: .5, x: 40, y: -40, opacity: 1 } )
+tl2.to( '.border-blue', {
+    duration: .5, 
+    x: 15, 
+    y: -20, 
+    opacity: 1 
+})
+
+.to( '.border-yel', {
+    duration: .5, 
+    x: 40, 
+    y: -40, 
+    opacity: 1 
+})
 
 tl.add(tl2)
 
@@ -129,15 +140,15 @@ window.addEventListener('scroll', () => {
   links[index].classList.add('active');
 });
 
-let navMain = document.querySelector(".nav");
-let navToggle = document.querySelector(".nav-toggle");
+const navMain = document.querySelector('.nav');
+const navToggle = document.querySelector('.nav-toggle');
 
-navToggle.addEventListener("click", function() {
-  if (navMain.classList.contains("nav--closed")) {
-    navMain.classList.remove("nav--closed");
-    navMain.classList.add("nav--opened");
+navToggle.addEventListener('click', function() {
+  if (navMain.classList.contains('nav--closed')) {
+    navMain.classList.remove('nav--closed');
+    navMain.classList.add('nav--opened');
   } else {
-    navMain.classList.add("nav--closed");
-    navMain.classList.remove("nav--opened");
+    navMain.classList.add('nav--closed');
+    navMain.classList.remove('nav--opened');
   }
 });
