@@ -17,6 +17,16 @@ tl.from('.menu', {
     duration: 1.2,
 }, '<')
 
+tl.from('.nav-toggle', {
+    opacity: 0,
+    duration: 1.2,
+}, '<')
+
+.from('.social-list', {
+    opacity: 0,
+    duration: 1.2,
+}, '<')
+
 .to('.greetingOne', {
     text: 'Hello.',
     duration: 1.5,
@@ -121,14 +131,6 @@ window.addEventListener('scroll', () => {
 
 let navMain = document.querySelector(".nav");
 let navToggle = document.querySelector(".nav-toggle");
-
-// if (document.body.clientWidth < 768) {
-//     navToggle.classList.remove('visually-hidden');
-// } else {
-//     navToggle.classList.add('visually-hidden');
-// }
-
-// navMain.classList.remove("nav--nojs");
 
 navToggle.addEventListener("click", function() {
   if (navMain.classList.contains("nav--closed")) {

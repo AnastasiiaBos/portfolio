@@ -120,12 +120,12 @@ ul {
 }
 
 .social-list li {
+    position: relative;
     width: 30px;
     height: 30px;
 }
 
 .social-list a {
-    position: relative;
     cursor: pointer;
 }
 
@@ -425,9 +425,24 @@ input, textarea {
     font-size: 0.85em;
 }
 
-.footer p {
+#scroll-text {
+    z-index: -1;
+    transform: translateX(100%);
+    animation: scroll 30s linear infinite;
+    position: absolute;
+    white-space: nowrap;
     margin: 0;
     padding: 0;
+}
+  
+
+@keyframes scroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 @media (max-width: 1300px) {
@@ -511,7 +526,7 @@ input, textarea {
         to { 
           background-position-x: 0px;
         }
-      }
+    }
     
     main {
         margin-left: 0;
@@ -607,14 +622,19 @@ input, textarea {
         width: 100%;
         height: auto;
         background-color: var(--background-dark);
+        border-bottom: 1px solid var(--main-white);
     }
 
     .menu-link:not(:last-child) {
         margin-right: 0;
     }
 
-    .menu-link {
+    .menu a {
+        text-decoration: none;
+        display: block;
+        margin: 0 -6%;
         padding: 4px 0;
+        text-align: center;
     }
 }
 
