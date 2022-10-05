@@ -46,6 +46,52 @@ ul {
     padding: 0;
 }
 
+.container {
+    height: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    position: relative;
+    width: 28px;
+    height: 30px;
+    padding: 0;
+    cursor: pointer;
+    border: 0;
+    background-color: var(--background-dark);
+}
+
+.nav--closed .nav-toggle::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 28px;
+    height: 1.5px;
+    background-color: var(--main-white);
+    box-shadow: 0 9px 0 0 var(--main-white), 0 18px 0 0 var(--main-white);
+}
+
+.nav--opened .nav-toggle::before,
+.nav--opened .nav-toggle::after {
+    content: "";
+    position: absolute;
+    top: auto;
+    left: 0;
+    width: 28px;
+    height: 1.5px;
+    background-color: var(--main-white);
+}
+  
+.nav--opened .nav-toggle::before {
+    transform: rotate(45deg);
+    box-shadow: none;
+}
+  
+.nav--opened .nav-toggle::after {
+    transform: rotate(-45deg);
+}
+
 .menu {
     height: 100%;
 }
@@ -74,8 +120,8 @@ ul {
 }
 
 .social-list li {
-    width: 40px;
-    height: 38px;
+    width: 30px;
+    height: 30px;
 }
 
 .social-list a {
@@ -421,15 +467,24 @@ input, textarea {
         z-index: 2;
     }
 
-    .social-list {
-        justify-content: flex-end;
-        bottom: 0;
-        right: 5px;
-        top: auto;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin: auto;
     }
+
 
     .menu {
         flex-direction: row;
+    }
+
+
+    .social-list {
+        justify-content: flex-end;
+        width: 90px;
+        position: static;
     }
 
     .menu-link:not(:last-child) {
@@ -464,6 +519,10 @@ input, textarea {
 
     .wrapper {
         width: 800px;
+    }
+
+    .footer {
+        font-size: 0.75em;
     }
 }
 
@@ -513,6 +572,49 @@ input, textarea {
 
     form {
         width: 400px;
+    }
+
+    .footer {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        height: 7%;
+    }
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav--closed .menu {
+        display: none;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .menu {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        margin: 0 -5%;
+        padding: 0 5%;
+        z-index: 10;
+        width: 100%;
+        height: auto;
+        background-color: var(--background-dark);
+    }
+
+    .menu-link:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .menu-link {
+        padding: 4px 0;
     }
 }
 
@@ -568,9 +670,5 @@ input, textarea {
     #message-button::after {
         width: 206.4px;
         height: 46.2px;
-    }
-
-    .footer {
-        font-size: 0.7em;
     }
 }
