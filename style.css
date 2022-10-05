@@ -1,3 +1,8 @@
+:root {
+    --main-white: #dedede;
+    --background-dark: #1d1d20;
+}
+
 html {
     margin: 0;
     padding: 0;
@@ -7,12 +12,12 @@ html {
 }
 
 body {
-    background-color: #1d1d20;
+    background-color: var(--background-dark);
     width: 100%;
     height: 100vh;
     width: 100%;
     max-width: 100%;
-    color: #dedede;
+    color: var(--main-white);
     margin: 0;
     padding: 0;
     display: flex;
@@ -27,13 +32,12 @@ header {
 
 nav {
     height: 100%;
-    background-color: #1d1d20;
+    background-color: var(--background-dark);
     position: relative;
 }
 
 ul {
     display: flex;
-    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -42,13 +46,77 @@ ul {
     padding: 0;
 }
 
+.menu {
+    height: 100%;
+}
+
 .menu a {
-    color: #dedede;
+    color: var(--main-white);
     text-decoration: none;
 }
 
 .active {
     font-size: 1.3em;
+}
+
+.social-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    left: auto;
+    bottom: 5px;
+}
+
+.social-list li:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social-list li {
+    width: 40px;
+    height: 38px;
+}
+
+.social-list a {
+    position: relative;
+    cursor: pointer;
+}
+
+.email::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 28px;
+    background-image: url(mail.svg);
+    background-position: 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.github::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url(github.svg);
+    background-position: 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.email:hover::before,
+.email:focus::before {
+    transform: scale(1.1);
+}
+
+.github:hover::before,
+.github:focus::before {
+    transform: scale(1.1);
 }
 
 .line-wrapper {
@@ -131,7 +199,7 @@ h1 {
 }
 
 .border{
-    border: 5px solid #ffffff;
+    border: 5px solid var(--main-white);
     width: 100%;
     height: 100%;
     display: inline-block;
@@ -186,7 +254,7 @@ h1 {
 .project-description img {
     width: 450px;
     height: 300px;
-    background: #1d1d20;
+    background: var(--background-dark);
     border-radius: 10px;
 }
 
@@ -215,7 +283,7 @@ h1 {
 .view {
     background-color: transparent;
     box-sizing: border-box;
-    color: #dedede;
+    color: var(--main-white);
     text-decoration: underline;
     text-decoration-color: #5073b8;
     cursor: pointer;
@@ -265,8 +333,8 @@ input, textarea {
     border: none;
     border-radius: 10px;
     margin-bottom: 10px;
-    background-color: #dedede;
-    color: #1d1d20;
+    background-color: var(--main-white);
+    color: var(--background-dark);
 }
 
 #message-button {
@@ -278,14 +346,11 @@ input, textarea {
     border-radius: 10px;
     width: 200px;
     align-self: center;
-    /* background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82); */
     cursor: pointer;
     box-sizing: border-box;
     position: relative;
-    background-color: #1d1d20;
-
-    /* background-color: rgba(29, 29, 32, 0.8); */
-    color: #dedede;
+    background-color: var(--background-dark);
+    color: var(--main-white);
     margin-top: 10px;
 }
 
@@ -303,11 +368,7 @@ input, textarea {
 
 #message-button:hover,
 #message-button:focus {
-    /* background-color: transparent; */
-    /* background-color: #1d1d20; */
     background-color: rgba(29, 29, 32, 0.8);
-    /* font-size: 1.15em; */
-    /* scale: 1.05; */
 }
 
 .footer {
@@ -360,6 +421,21 @@ input, textarea {
         z-index: 2;
     }
 
+    .social-list {
+        justify-content: flex-end;
+        bottom: 0;
+        right: 5px;
+        top: auto;
+    }
+
+    .menu {
+        flex-direction: row;
+    }
+
+    .menu-link:not(:last-child) {
+        margin-right: 20px;
+    }
+
     .line-wrapper {
         top: auto;
         bottom: 0;
@@ -388,19 +464,6 @@ input, textarea {
 
     .wrapper {
         width: 800px;
-    }
-
-    .menu {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .menu-link:not(:last-child) {
-        margin-right: 20px;
     }
 }
 
